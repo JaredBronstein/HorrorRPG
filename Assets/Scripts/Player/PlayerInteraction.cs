@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     private BoxCollider2D interactionTrigger;
-
     private InteractiveObject currentTarget;
+    private bool canInteract = true;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Interact") && currentTarget != null)
+        if(Input.GetButtonDown("Interact") && currentTarget != null && canInteract)
         {
             Debug.Log("Interacting with: " + currentTarget.gameObject.name);
             currentTarget.Interact();
@@ -42,5 +42,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         Debug.Log("Removing current target");
         currentTarget = null;
+    }
+
+    public void toggleCanInteract(bool CanInteract)
+    {
+        canInteract = CanInteract;
     }
 }

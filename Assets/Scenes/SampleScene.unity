@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 213210642}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -487.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -170,7 +170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &233241373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +247,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 213210643}
+  - {fileID: 1595817211}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -381,7 +382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 960, y: 27}
+  m_AnchoredPosition: {x: 0, y: -461.91}
   m_SizeDelta: {x: 1656, y: 975}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &736603187
@@ -453,7 +454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17a9c84c96b09748b332c296cdf1254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: 
+  dialogueText: Just a Red Square
+  removeOnInteract: 0
 --- !u!61 &812335858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -579,7 +581,7 @@ GameObject:
   - component: {fileID: 894323486}
   - component: {fileID: 894323485}
   - component: {fileID: 894323484}
-  - component: {fileID: 894323483}
+  - component: {fileID: 894323487}
   m_Layer: 0
   m_Name: Yellow Square
   m_TagString: Untagged
@@ -587,19 +589,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &894323483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894323482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f17a9c84c96b09748b332c296cdf1254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: 
 --- !u!61 &894323484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -714,6 +703,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1046684374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &894323487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894323482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105efd3dfbb03c941865b51692be71b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: Generic Key has been picked up!
+  removeOnInteract: 1
+  inventoryObject: {fileID: 7869380859586341587, guid: 006146b0387a54044a41e1f062415f19,
+    type: 3}
+--- !u!1 &935125052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935125054}
+  - component: {fileID: 935125053}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &935125053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935125052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1d38c41cc6b2941ac1d62ff9b75a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 1871830402}
+  dialogueDelay: 1.5
+--- !u!4 &935125054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935125052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046684373
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,10 +794,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1145582979}
-  - {fileID: 894323486}
-  - {fileID: 812335860}
   - {fileID: 1426316121}
+  - {fileID: 812335860}
+  - {fileID: 894323486}
+  - {fileID: 1145582979}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1145582975
@@ -760,7 +811,7 @@ GameObject:
   - component: {fileID: 1145582979}
   - component: {fileID: 1145582978}
   - component: {fileID: 1145582977}
-  - component: {fileID: 1145582976}
+  - component: {fileID: 1145582980}
   m_Layer: 0
   m_Name: Green Square
   m_TagString: Untagged
@@ -768,19 +819,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1145582976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145582975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f17a9c84c96b09748b332c296cdf1254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: 
 --- !u!61 &1145582977
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -895,6 +933,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1046684374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1145582980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145582975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f950d94b0e21545ae0dabdc558d780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: You picked up the second generic key!
+  removeOnInteract: 1
+  inventoryObject: {fileID: 2257041768492448000, guid: 2ca18e94ece2dd443af3d9d1c117b067,
+    type: 3}
+  failText: You don't have the key!
+  lockID: 1
+  lockName: Generic Key 1
 --- !u!1 &1405040219
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +1000,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1405040221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1208,7 +1265,7 @@ GameObject:
   - component: {fileID: 1426316121}
   - component: {fileID: 1426316120}
   - component: {fileID: 1426316119}
-  - component: {fileID: 1426316118}
+  - component: {fileID: 1426316122}
   m_Layer: 0
   m_Name: Blue Square
   m_TagString: Untagged
@@ -1216,19 +1273,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1426316118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426316117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f17a9c84c96b09748b332c296cdf1254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: 
 --- !u!61 &1426316119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1343,6 +1387,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1046684374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1426316122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426316117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09806c65f3258e945ba8b0c119984cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: You can do that.
+  removeOnInteract: 0
+  failText: You cannot do that.
+  lockID: 2
+  lockName: Generic Key2
+--- !u!1 &1595817210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1595817211}
+  m_Layer: 5
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1595817211
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595817210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233241376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1871830400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,3 +1650,4 @@ SceneRoots:
   - {fileID: 1405040222}
   - {fileID: 1046684374}
   - {fileID: 1426204176}
+  - {fileID: 935125054}

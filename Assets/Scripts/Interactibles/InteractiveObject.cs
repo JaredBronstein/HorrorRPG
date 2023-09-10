@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//TO-DO: Add additional overrides for Interact in the child classes!
 public class InteractiveObject : MonoBehaviour
 {
     [SerializeField]
-    private string dialogueText;
+    protected string dialogueText;
 
-    private InventoryManager inventoryManager;
+    [SerializeField]
+    protected bool removeOnInteract;
+
+    protected InventoryManager inventoryManager;
 
     private void Awake()
     {
@@ -18,6 +19,6 @@ public class InteractiveObject : MonoBehaviour
 
     public virtual void Interact()
     {
-        StartCoroutine(inventoryManager.HandleInteractiveObject(dialogueText));
+        StartCoroutine(inventoryManager.HandleInteractiveObject(this, removeOnInteract, dialogueText));
     }
 }

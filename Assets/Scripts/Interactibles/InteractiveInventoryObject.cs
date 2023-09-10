@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class InteractiveInventoryObject : InteractiveObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private InventoryObject inventoryObject;
 
-    // Update is called once per frame
-    void Update()
+    public override void Interact()
     {
-        
+        StartCoroutine(inventoryManager.HandleInteractiveObject(this, removeOnInteract, inventoryObject, dialogueText));
     }
 }
